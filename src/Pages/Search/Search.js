@@ -3,8 +3,7 @@ import { useData } from "../../Context/dataContext";
 import { BookCard } from "../../Components/BookCard.js/BookCard";
 export const Search = () => {
   const {
-    dataState: { searchQuery },
-    books,
+    dataState: { books,searchQuery },
     dataDispatch,
   } = useData();
   let searchResult = filterBooks(books, searchQuery);

@@ -3,7 +3,7 @@ import { useData } from "../../Context/dataContext";
 import "./Shelf.css";
 
 export const Shelf = () => {
-  const {dataDispatch, dataState:{none, wantToRead, currentlyReading, read,} } = useData();
+  const {dataDispatch, none, wantToRead, currentlyReading, read } = useData();
   return (
     <div>
       <h1>Checkout these books</h1>

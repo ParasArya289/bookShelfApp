@@ -4,11 +4,17 @@ export const initDataState = {
   wantToRead: [],
   currentlyReading: [],
   searchQuery:"",
+  books:[],
 };
 export const dataReducer = (state, action) => {
   switch (action.type) {
     case "INIT_DATA":
-      return action.payload;
+      return{...state,...action.payload};
+    case "UPDATE_BOOKS":
+      return{
+        ...state,
+        books:state.books.map((book)=>book.id===action.payload.id?{...book,state:action.payload.state}:book)
+      }
     case "MOVE_TO_READ":
       return {
         ...state,
@@ -20,6 +26,7 @@ export const dataReducer = (state, action) => {
         currentlyReading: state.currentlyReading.filter(
           ({ id }) => id !== action.payload.id
         ),
+        books:state.books.map((book)=>book.id === action.payload.id?{...book,state:action.payload.data.state}:book)
       };
     case "MOVE_TO_CURRENTLYREADING":
       return {

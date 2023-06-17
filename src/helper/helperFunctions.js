@@ -3,16 +3,18 @@ export const updateSearchQuery = (dispatch, query) =>
 
 export const selectMenuSelection = (e, dispatch, id, data) => {
   const { value } = e.target;
-
-  if (value === "read") {
-    dispatch({ type: "MOVE_TO_READ", payload: { data, id } });
-  } else if (value === "currentlyReading") {
-    dispatch({ type: "MOVE_TO_CURRENTLYREADING", payload: { data, id } });
-  } else if (value === "wantToRead") {
-    dispatch({ type: "MOVE_TO_WANTTOREAD", payload: { data, id } });
-  } else if (value === "none") {
-    dispatch({ type: "MOVE_TO_NONE", payload: { data, id } });
+  if(value){
+    dispatch({type:"UPDATE_BOOKS",payload:{state:value,id}})
   }
+  // if (value === "read") {
+  //   dispatch({ type: "MOVE_TO_READ", payload: { data, id } });
+  // } else if (value === "currentlyReading") {
+  //   dispatch({ type: "MOVE_TO_CURRENTLYREADING", payload: { data, id } });
+  // } else if (value === "wantToRead") {
+  //   dispatch({ type: "MOVE_TO_WANTTOREAD", payload: { data, id } });
+  // } else if (value === "none") {
+  //   dispatch({ type: "MOVE_TO_NONE", payload: { data, id } });
+  // }
 };
 
 export const filterBooks = (array, query) => {
