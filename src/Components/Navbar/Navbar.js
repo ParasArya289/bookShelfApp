@@ -1,10 +1,11 @@
 import {BiArrowBack} from "react-icons/bi";
+import { Searchbar } from "../SearchBar/SearchBar";
 import "./Navbar.css";
 export const Navbar = () => {
   return (
-    <nav>
+    <nav className="navbar">
      <BiArrowBack/>
-      <input type="search" placeholder="Search books by name" />
+     <Searchbar/>
     </nav>
   );
 };
