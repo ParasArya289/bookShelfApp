@@ -11,13 +11,6 @@ import { dataReducer, initDataState } from "../Reducers/dataReducer";
 export const dataContext = createContext();
 export const DataContextProvider = ({ children }) => {
   const [dataState, dataDispatch] = useReducer(dataReducer, initDataState);
-
-  // const wantToRead = books.filter(({ state }) => state === "wantToRead");
-  // const read = books.filter(({ state }) => state === "read");
-  // const currentlyReading = books.filter(
-  //   ({ state }) => state === "currentlyReading"
-  // );
-  // const none = books.filter(({ state }) => state === "none");
   const wantToRead = dataState.books.filter(({ state }) => state === "wantToRead");
   const read = dataState.books.filter(({ state }) => state === "read");
   const currentlyReading = dataState.books.filter(
@@ -29,10 +22,6 @@ export const DataContextProvider = ({ children }) => {
     dataDispatch({
       type: "INIT_DATA",
       payload: {
-        read,
-        wantToRead,
-        currentlyReading,
-        none,
         books,
       },
     });
