@@ -6,7 +6,7 @@ export const Navbar = () => {
   const navigate = useNavigate();
   return (
     <nav className="navbar">
-     <BiArrowBack onClick={()=>navigate("/")}/>
+     <BiArrowBack className="navbar-icon" onClick={()=>navigate("/")}/>
      <Searchbar/>
     </nav>
   );
