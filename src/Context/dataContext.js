@@ -32,7 +32,7 @@ export const DataContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <dataContext.Provider value={{ none, wantToRead, read, currentlyReading,dataState,dataDispatch }}>
+    <dataContext.Provider value={{books,dataState,dataDispatch }}>
       {children}
     </dataContext.Provider>
   );

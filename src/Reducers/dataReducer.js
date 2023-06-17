@@ -3,6 +3,7 @@ export const initDataState = {
   none: [],
   wantToRead: [],
   currentlyReading: [],
+  searchQuery:"",
 };
 export const dataReducer = (state, action) => {
   switch (action.type) {
@@ -52,6 +53,11 @@ export const dataReducer = (state, action) => {
           ({ id }) => id !== action.payload.id
         ),
       };
+      case "INIT_SEARCHQUERY":
+        return{
+          ...state,
+          searchQuery:action.payload
+        }
     default:
       return state;
   }
